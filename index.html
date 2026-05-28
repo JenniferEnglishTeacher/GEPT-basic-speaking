@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GEPT Basic Speaking Practice</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="question-sidebar" aria-label="Question list">
+        <div class="sidebar-head">
+          <div>
+            <p class="eyebrow">GEPT Basic</p>
+            <h1>Speaking Practice</h1>
+          </div>
+          <span class="count-pill">200</span>
+        </div>
+        <label class="search-box">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="question or number">
+        </label>
+        <div id="questionList" class="question-list"></div>
+      </aside>
+
+      <main class="practice-pane">
+        <section class="question-panel">
+          <div class="question-meta">
+            <span id="questionNumber">Question 1</span>
+            <button id="randomButton" class="icon-button" type="button" title="Random question" aria-label="Random question">↻</button>
+          </div>
+          <h2 id="questionText"></h2>
+          <div class="answer-block">
+            <div class="block-title">
+              <span>Sample Answer</span>
+              <button id="speakSampleButton" class="small-button" type="button">▶ Listen</button>
+            </div>
+            <p id="sampleAnswer"></p>
+          </div>
+          <div class="sentences-block">
+            <div class="block-title">
+              <span>5 Practice Sentences</span>
+              <button id="copySentencesButton" class="small-button" type="button">Copy</button>
+            </div>
+            <ol id="practiceSentences"></ol>
+          </div>
+        </section>
+
+        <section class="speaking-panel">
+          <div class="timer-row">
+            <div class="timer-display" id="timerDisplay">15</div>
+            <div class="timer-controls" role="group" aria-label="Answer length">
+              <button class="time-choice active" type="button" data-seconds="15">15 sec</button>
+              <button class="time-choice" type="button" data-seconds="30">30 sec</button>
+            </div>
+          </div>
+          <div class="record-row">
+            <button id="recordButton" class="record-button" type="button">
+              <span class="record-dot"></span>
+              Start Recording
+            </button>
+            <button id="resetButton" class="secondary-button" type="button">Reset</button>
+          </div>
+          <div class="status-line" id="statusLine">Choose a question and press Start Recording.</div>
+        </section>
+      </main>
+
+      <aside class="feedback-pane" aria-label="Speech transcript and feedback">
+        <div class="feedback-head">
+          <div>
+            <p class="eyebrow">Speech to Text</p>
+            <h2>Your Answer</h2>
+          </div>
+          <button id="feedbackButton" class="primary-button" type="button">Feedback</button>
+        </div>
+        <textarea id="transcriptBox" placeholder="Your spoken English will appear here..."></textarea>
+        <div class="correction-box">
+          <div class="block-title">
+            <span>Corrected Answer</span>
+            <button id="readCorrectionButton" class="small-button" type="button">▶ Read</button>
+          </div>
+          <p id="correctedAnswer">Click Feedback after recording.</p>
+        </div>
+        <div class="tips-box">
+          <strong>Teacher note</strong>
+          <p>This page corrects common grammar, capitalization, spacing, and punctuation locally in the browser.</p>
+        </div>
+      </aside>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
