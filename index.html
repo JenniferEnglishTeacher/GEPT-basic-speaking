@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GEPT Basic Speaking Practice</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="question-sidebar" aria-label="Question list">
+        <div class="sidebar-head">
+          <div>
+            <p class="eyebrow">GEPT Basic</p>
+            <h1>Speaking Practice</h1>
+          </div>
+          <span class="count-pill">200</span>
+        </div>
+        <label class="search-box">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="question or number">
+        </label>
+        <div id="questionList" class="question-list"></div>
+      </aside>
+
+      <main class="practice-pane">
+        <section class="question-panel">
+          <div class="question-meta">
+            <span id="questionNumber">Question 1</span>
+            <button id="randomButton" class="icon-button" type="button" title="Random question" aria-label="Random question">Random</button>
+          </div>
+          <h2 id="questionText"></h2>
+          <div class="answer-block">
+            <div class="block-title">
+              <span>Sample Answer</span>
+              <button id="speakSampleButton" class="small-button" type="button">Listen</button>
+            </div>
+            <p id="sampleAnswer"></p>
+            <p id="questionTip" class="question-tip"></p>
+          </div>
+          <div class="sentences-block">
+            <div class="block-title">
+              <span>5 Practice Sentences</span>
+              <button id="copySentencesButton" class="small-button" type="button">Copy</button>
+            </div>
+            <ol id="practiceSentences"></ol>
+          </div>
+        </section>
+      </main>
+
+      <aside class="feedback-pane" aria-label="Speech transcript and feedback">
+        <div class="feedback-head">
+          <div>
+            <p class="eyebrow">Speech to Text</p>
+            <h2>Your Answer</h2>
+          </div>
+        </div>
+        <section class="speaking-panel">
+          <div class="timer-row">
+            <div>
+              <p class="eyebrow">Timer</p>
+              <div class="timer-display" id="timerDisplay">15</div>
+            </div>
+            <div class="timer-controls" role="group" aria-label="Answer length">
+              <button class="time-choice active" type="button" data-seconds="15">15 sec</button>
+              <button class="time-choice" type="button" data-seconds="30">30 sec</button>
+            </div>
+          </div>
+          <div class="record-row">
+            <button id="recordButton" class="record-button" type="button">
+              <span class="record-dot"></span>
+              Start Recording
+            </button>
+            <button id="resetButton" class="secondary-button" type="button">Reset</button>
+          </div>
+          <div class="status-line" id="statusLine">Click Start Recording, then speak in English.</div>
+        </section>
+        <textarea id="transcriptBox" placeholder="Your spoken English will appear here..."></textarea>
+        <button id="submitButton" class="submit-answer-button" type="button">Submit Answer</button>
+        <div class="mistakes-box">
+          <div class="block-title">
+            <span>Original Mistakes</span>
+          </div>
+          <p id="mistakeReview">Submit your answer to check grammar.</p>
+        </div>
+        <div class="correction-box">
+          <div class="block-title">
+            <span>Corrected Answer</span>
+          </div>
+          <p id="correctedAnswer">Click Submit Answer after recording.</p>
+        </div>
+        <div class="readcheck-box">
+          <div class="block-title">
+            <span>Read-Aloud Check</span>
+            <button id="readAloudButton" class="small-button" type="button">Read Aloud</button>
+          </div>
+          <p id="readCheckStatus">Submit an answer first, then read the corrected version aloud.</p>
+          <div id="unclearWords" class="word-chip-list"></div>
+        </div>
+        <div class="tips-box">
+          <strong>Teacher note</strong>
+          <p>This page checks common grammar, capitalization, spacing, and pronunciation clarity locally in the browser.</p>
+        </div>
+      </aside>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
